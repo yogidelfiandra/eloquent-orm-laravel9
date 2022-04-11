@@ -14,4 +14,15 @@ class Matches extends Model
 	protected $fillable = [
 		'clubs_id', 'rivals_id', 'schedule', 'created_at', 'updated_at'
 	];
+
+	// relation
+	public function clubs()
+	{
+		return $this->belongsTo('App\Models\Clubs', 'clubs_id', 'id');
+	}
+
+	public function rivals()
+	{
+		return $this->belongsTo('App\Models\Clubs', 'rivals_id', 'id');
+	}
 }

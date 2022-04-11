@@ -14,4 +14,10 @@ class Stadiums extends Model
 	protected $fillable = [
 		'name', 'capacity', 'address', 'created_at', 'updated_at'
 	];
+
+	// relation
+	public function clubs()
+	{
+		return $this->hasOne('App\Models\Clubs', 'stadiums_id');
+	}
 }
